@@ -80,3 +80,30 @@ module "qa" {
 
   account_customizations_name = "qa"
 }
+module "prod" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aft-prod@infraws.xyz"
+    AccountName               = "aft-prod"
+    ManagedOrganizationalUnit = "Production"
+    SSOUserEmail              = "aft-prod@infraws.xyz"
+    SSOUserFirstName          = "Production"
+    SSOUserLastName           = "AFT"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Tex Albuja"
+    change_reason       = "Environment created for Prod"
+  }
+
+  custom_fields = {
+    group = "prod"
+  }
+
+  account_customizations_name = "prod"
+}
