@@ -52,3 +52,31 @@ module "development" {
 
   account_customizations_name = "development"
 }
+
+module "qa" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aft-qa@infraws.xyz"
+    AccountName               = "aft-qa"
+    ManagedOrganizationalUnit = "QA"
+    SSOUserEmail              = "aft-qa@infraws.xyz"
+    SSOUserFirstName          = "QA"
+    SSOUserLastName           = "AFT"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Tex Albuja"
+    change_reason       = "Environment created for QA process"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "qa"
+}
