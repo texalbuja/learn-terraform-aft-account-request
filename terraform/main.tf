@@ -16,7 +16,7 @@ module "sandbox" {
 
   change_management_parameters = {
     change_requested_by = "HashiCorp Learn"
-    change_reason       = "Learn AWS Control Tower Account Factory for Terraform"
+    change_reason       = "Update S3 Account by Global Customizations for Sandbox"
   }
 
   custom_fields = {
@@ -43,7 +43,7 @@ module "development" {
 
   change_management_parameters = {
     change_requested_by = "Tex Albuja"
-    change_reason       = "Environment created for Development process"
+    change_reason       = "Update S3 Account by Global Customizations for Dev"
   }
 
   custom_fields = {
@@ -71,7 +71,7 @@ module "qa" {
 
   change_management_parameters = {
     change_requested_by = "Tex Albuja"
-    change_reason       = "Environment created for QA process"
+    change_reason       = "Update S3 Account by Global Customizations for QA"
   }
 
   custom_fields = {
@@ -98,7 +98,7 @@ module "prod" {
 
   change_management_parameters = {
     change_requested_by = "Tex Albuja"
-    change_reason       = "Environment created for Prod"
+    change_reason       = "Update S3 Account by Global Customizations for Prod"
   }
 
   custom_fields = {
