@@ -107,3 +107,30 @@ module "prod" {
 
   account_customizations_name = "prod"
 }
+module "stage" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "aft-stage@infraws.xyz"
+    AccountName               = "aft-stage"
+    ManagedOrganizationalUnit = "Stage"
+    SSOUserEmail              = "aft-stage@infraws.xyz"
+    SSOUserFirstName          = "Stage"
+    SSOUserLastName           = "AFT"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Tex Albuja"
+    change_reason       = "Update S3 Account by Global Customizations for Prod"
+  }
+
+  custom_fields = {
+    group = "non-prod"
+  }
+
+  account_customizations_name = "stage"
+}
